@@ -18,13 +18,11 @@ export default (state = defaultState, action) => {
     case "GET_ALL":
       return newState;
     case "GET_ONE":
-    console.log(newState.allMemes)
       let theOne = newState.allMemes.filter((meme) => {
-        console.log(meme.id == action.id, meme.id, action.id)
-        if (meme.id == action.id) {
+        if (meme.id === Number(action.id)) {
           return meme
         }
-      } )
+      })
 
       if (theOne[0]) {
         return ({

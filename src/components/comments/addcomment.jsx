@@ -1,20 +1,42 @@
-import React from 'react'
+import React, { Component } from "react"
+import { Redirect } from "react-router"
 
-const AddComment = ({state, link_id, getAddComment, subAddComment}) => {
-    
-    const submit = e => {
-        e.preventDefault()
-        subAddComment(link_id)
+class AddComment extends Component {
+  constructor() {
+    super()
+    this.state = {
+      fireRedirect: false
     }
-    
+  }
+
+  submit = e => {
+    const { link_id, subAddComment } = this.props
+    const { fireRedirect } = this.state
+    e.preventDefault()
+    subAddComment(link_id)
+    this.setState({ fireRedirect: true })
+  }
+
+  render() {
+    const { state, link_id, getAddComment } = this.props
+    const { fireRedirect } = this.state
     return (
-        <div>
-            <form onSubmit={submit} >
-                <input type='text' placeholder='Enter Comment Here' onChange={ function title (e) { getAddComment(e.target.value)}} value={state.comment}/>
-                <button>Add</button>
-            </form>
-        </div>
+      <div>
+        <form onSubmit={this.submit}>
+          <input
+            type="text"
+            placeholder="Enter Comment Here"
+            onChange={function title(e) {
+              getAddComment(e.target.value, link_id)
+            }}
+            value={state.comment}
+          />
+          <button>Add</button>
+        </form>
+        {fireRedirect && <Redirect to={`/comments/${link_id}/all`} />}
+      </div>
     )
+  }
 }
 
 export default AddComment

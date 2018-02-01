@@ -9,9 +9,9 @@ class CommentsContainer extends React.Component {
     dispatch({ type: "GET_ONE_C", link_id: link_id});
   };
 
-  getAddComment = (link_id) => {
+  getAddComment = (inputValue, link_id) => {
     const { dispatch } = this.props;
-    dispatch({ type: "ADD_ONE_C", link_id: link_id});
+    dispatch({ type: "ADD_ONE_C", inputValue: inputValue, link_id: link_id});
   };
 
   subAddComment = (link_id) => {

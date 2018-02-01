@@ -1,14 +1,12 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import LinkList from './linklist';
 import SingleLink from './singlelink';
 
 const Links = ({ state, getAllLinks, getSingleLink}) => {
   const renderLinkList = () => {
-    console.log(state)
-    return (
-      <LinkList state={state} getAllLinks={getAllLinks} />
-    )
+    return <LinkList state={state} getAllLinks={getAllLinks} />
+    
   }
 
   const renderSingleLink = (props) => {

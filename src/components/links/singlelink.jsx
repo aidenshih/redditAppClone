@@ -8,7 +8,6 @@ class SingleLink extends Component {
 
   render () {
     const { state } = this.props;
-    console.log(state)
     return (
       <div>
         <h3>{state.oneMeme.title}</h3>
@@ -17,7 +16,7 @@ class SingleLink extends Component {
             Go to Site
           </p>
         </a>
-        <Link to={`/comments/${this.props.id}`}>See Comments</Link>
+        <Link to={`/comments/${this.props.id}/all`}>See Comments</Link>
       </div>
     );
   }

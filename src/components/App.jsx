@@ -12,7 +12,6 @@ const App = () => {
       <nav>
         <Link to='/'>Home</Link> {" "}
         <Link to='/links'>All Links</Link>{" "}
-        <Link to='/new'>Add New</Link>
       </nav>
 
       <h2> <span role="img" aria-label="emojis">💯🔥🙏👌 Meme-ddit 👌🙏🔥💯</span> </h2>

@@ -6,6 +6,7 @@ class ListComments extends Component {
     componentDidMount(){
         const {getOneComments, link_id} = this.props
         getOneComments(link_id)
+        console.log(link_id)
     }
 
     render () {

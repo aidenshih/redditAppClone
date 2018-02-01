@@ -21,6 +21,7 @@ class LinkList extends Component {
 
     return (
       <div>
+        <Link to='/new'>Add A Link</Link>
         <ul>
           {allList}
         </ul>
