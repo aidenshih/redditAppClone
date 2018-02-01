@@ -11,8 +11,8 @@ class LinkList extends Component {
 
     const allList = state.allMemes.map((item) => {
       return (
-        <Link to={`/links/${item.id+1}`}>
-          <li id={item.id+1}>
+        <Link to={`/links/${item.id}`}>
+          <li id={item.id}>
             {item.title}
           </li>
         </Link>

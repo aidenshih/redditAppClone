@@ -14,7 +14,6 @@ class ListComments extends Component {
         let show = state.showComments.map( (comment, i) => {
             return <li key={i}>{comment}</li>
             })
-        
 
         return (
             <div>

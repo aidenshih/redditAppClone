@@ -1,10 +1,10 @@
 const defaultState = {
   allMemes: [
-    {id: 1, title: 'Slender Man', url: `http://knowyourmeme.com/memes/slender-man`},
-    {id: 2, title: 'Doge', url: `http://knowyourmeme.com/memes/doge`},
-    {id: 3, title: 'Arrow in the Knee', url: `http://knowyourmeme.com/memes/i-took-an-arrow-in-the-knee`},
-    {id: 4, title: 'Tide Pods', url: `http://knowyourmeme.com/memes/tide-pod-challenge`},
-    {id: 5, title: 'Whomst', url: `http://knowyourmeme.com/memes/whomst`}
+    {id: '1', title: 'Slender Man', url: `http://knowyourmeme.com/memes/slender-man`},
+    {id: '2', title: 'Doge', url: `http://knowyourmeme.com/memes/doge`},
+    {id: '3', title: 'Arrow in the Knee', url: `http://knowyourmeme.com/memes/i-took-an-arrow-in-the-knee`},
+    {id: '4', title: 'Tide Pods', url: `http://knowyourmeme.com/memes/tide-pod-challenge`},
+    {id: '5', title: 'Whomst', url: `http://knowyourmeme.com/memes/whomst`}
   ],
   oneMeme: [],
   url: [],
@@ -19,7 +19,7 @@ export default (state = defaultState, action) => {
       return newState;
     case "GET_ONE":
       let theOne = newState.allMemes.filter((meme) => {
-        if (meme.id === Number(action.id)) {
+        if (meme.id === action.id) {
           return meme
         }
       })
@@ -50,8 +50,10 @@ export default (state = defaultState, action) => {
     const arrayOfIDs = newState.allMemes.map( meme => meme.id)
     console.log(arrayOfIDs)
     const getNextID = arrayOfIDs.reduce( (current, index) => {
+      console.log('current:', current)
+      console.log('index:', index)
       if (current !== index+1) {
-        return current+1
+        return index+1
       }
     })
     const newAllMemes = [...newState.allMemes, {id: getNextID, title: newState.title, url: newState.url}]

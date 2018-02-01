@@ -1,7 +1,7 @@
 const defaultState = {
   allComments: [
-    { id: 1, comments: ["good", "bad"] },
-    { id: 2, comments: ["good", "bad", "okay"] }
+    { id: '1', comments: ["good", "bad"] },
+    { id: '2', comments: ["good", "bad", "okay"] }
   ],
   showComments: [],
   comment: ""
@@ -14,7 +14,7 @@ export default (state = defaultState, action) => {
     case "GET_ONE_C":
       let arr = []
       newState.allComments.map(meme => {
-        if (meme.id === Number(action.link_id)) {
+        if (meme.id === action.link_id) {
           arr = [...meme.comments]
         } else {
           return null
@@ -31,7 +31,7 @@ export default (state = defaultState, action) => {
       // CHECK TO SEE IF LINK_ID HAS COMMENTS / IF NOT ADD THEM
       let memeHasComments = newState.allComments.map(meme => meme.id) // return an array of all meme ids
       let allCommentsWithNewObj = [] // empty array to hold all objs with new obj
-      if (memeHasComments.includes(Number(action.link_id))) {
+      if (memeHasComments.includes(action.link_id)) {
         console.log(allCommentsWithNewObj)
         return {
           allComments: newState.allComments,
@@ -42,7 +42,7 @@ export default (state = defaultState, action) => {
         // if current inputValue is not in array of all meme ids
         allCommentsWithNewObj = [
           ...newState.allComments,
-          { id: Number(action.link_id), comments: [] }
+          { id: action.link_id, comments: [] }
         ] // add [all current obj, new obj with current inputValue]
         console.log(allCommentsWithNewObj)
         return {
@@ -56,7 +56,7 @@ export default (state = defaultState, action) => {
       let objComments = [] // objComments array to hold comments
       newState.allComments.map(meme => {
         // map through all current comments obj
-        if (meme.id === Number(action.link_id)) {
+        if (meme.id === action.link_id) {
           // if id is the one we want to change
           objComments = [...meme.comments, newState.comment] // objComments = [...current comments, text input value]
         } else {
@@ -68,12 +68,12 @@ export default (state = defaultState, action) => {
 
       let newans = newState.allComments.map(meme => {
         // go through all the comments
-        if (meme.id === Number(action.link_id)) {
+        if (meme.id === action.link_id) {
           // if id is the one we want to change
-          return { id: Number(action.link_id), comments: objComments } // return object with comments
-        } else if (meme.id !== Number(action.link_id)) {
+          return { id: action.link_id, comments: objComments } // return object with comments
+        } else if (meme.id !== action.link_id) {
           // if id is not the one we want to change
-          return { id: Number(meme.id), comments: meme.comments } // return original object
+          return { id: meme.id, comments: meme.comments } // return original object
         } else {
           return
         }
