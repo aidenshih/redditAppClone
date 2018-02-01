@@ -48,6 +48,7 @@ export default (state = defaultState, action) => {
       });
     case "RESET_ALL":
     const arrayOfIDs = newState.allMemes.map( meme => meme.id)
+    console.log(arrayOfIDs)
     const getNextID = arrayOfIDs.reduce( (current, index) => {
       if (current !== index+1) {
         return current+1
