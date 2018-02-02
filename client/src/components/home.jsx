@@ -6,7 +6,7 @@ const Home = () => {
       {/* <marquee behavior="alternate">🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥</marquee> */}
       <h1>
         {/* <marquee behavior="alternate">😂😂😂😂😂😂😂😂</marquee> */}
-          Welcome
+          Welcome User Auth
         {/* <marquee behavior="alternate">😂😂😂😂😂😂😂😂</marquee> */}
       </h1>
       {/* <marquee behavior="alternate">🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥</marquee> */}

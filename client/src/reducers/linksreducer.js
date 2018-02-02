@@ -53,9 +53,10 @@ export default (state = defaultState, action) => {
       console.log('current:', current)
       console.log('index:', index)
       if (current !== index+1) {
-        return index+1
+        return `${Number(index)+1}`
       }
     })
+    console.log(getNextID)
     const newAllMemes = [...newState.allMemes, {id: getNextID, title: newState.title, url: newState.url}]
       return ({
         allMemes: newAllMemes,

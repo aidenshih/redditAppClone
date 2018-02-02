@@ -11,7 +11,7 @@ class LinkList extends Component {
 
     const allList = state.allMemes.map((item) => {
       return (
-        <Link to={`/links/${item.id}`}>
+        <Link to={`/links/s/${item.id}`}>
           <li id={item.id}>
             {item.title}
           </li>
@@ -21,7 +21,7 @@ class LinkList extends Component {
 
     return (
       <div>
-        <Link to='/new'>Add A Link</Link>
+        <Link to='/links/new'>Add A Link</Link>
         <ul>
           {allList}
         </ul>

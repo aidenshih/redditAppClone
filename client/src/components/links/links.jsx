@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import LinkList from './linklist';
 import SingleLink from './singlelink';
+import NewContainer from '../../containers/newcontainer'
 
 const Links = ({ state, getAllLinks, getSingleLink}) => {
   const renderLinkList = () => {
@@ -19,7 +20,8 @@ const Links = ({ state, getAllLinks, getSingleLink}) => {
   return (
     <div>
       <Route exact path='/links' render={renderLinkList} />
-      <Route path='/links/:id' render={renderSingleLink} />
+      <Route path="/links/new" component={NewContainer} />
+      <Route path='/links/s/:id' render={renderSingleLink} />
     </div>
   )
 }
